@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro de técnicos colaboradores — IberGas</title>
+<meta name="description" content="Regístrate como técnico instalador de gas colaborador de IberGas y forma parte de nuestra red profesional de instaladores habilitados.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Navegación principal">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 6 9.5 6 14.5C6 18.09 8.69 21 12 21C15.31 21 18 18.09 18 14.5C18 9.5 12 2 12 2Z" fill="white" fill-opacity="0.95"/></svg></span>
+      IberGas
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#sobre-nosotros">Sobre nosotros</a></li>
+      <li><a href="../index.html#servicios">Servicios</a></li>
+      <li><a href="../index.html#red">Red IberGas</a></li>
+      <li><a href="colaboradores.html">Colaboradores</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="contacto.html" class="btn btn-secondary btn-sm">Contactar</a>
+      <a href="registro-tecnico.html" class="btn btn-primary btn-sm">Registrarme como técnico</a>
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menú">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+  </nav>
+</header>
+
+<div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-top">
+      <span class="brand" style="color:white;">IberGas</span>
+      <button class="mobile-menu-close" aria-label="Cerrar menú">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+      </button>
+    </div>
+    <a href="../index.html#sobre-nosotros">Sobre nosotros</a>
+    <a href="../index.html#servicios">Servicios</a>
+    <a href="../index.html#red">Red IberGas</a>
+    <a href="colaboradores.html">Colaboradores</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+</div>
+
+<main id="main">
+  <section class="form-hero">
+    <div class="container">
+      <span class="eyebrow">Red de técnicos colaboradores</span>
+      <h1>Registro de técnicos colaboradores IberGas</h1>
+      <p>Completa tus datos personales, profesionales y de habilitación. Nuestro equipo revisará tu documentación y te contactará con el resultado de la validación.</p>
+      <div class="form-progress" aria-hidden="true">
+        <div class="form-progress-step active"><div class="fill"></div></div>
+        <div class="form-progress-step"><div class="fill"></div></div>
+        <div class="form-progress-step"><div class="fill"></div></div>
+        <div class="form-progress-step"><div class="fill"></div></div>
+        <div class="form-progress-step"><div class="fill"></div></div>
+        <div class="form-progress-step"><div class="fill"></div></div>
+        <div class="form-progress-step"><div class="fill"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container form-layout">
+    <nav class="form-nav" id="form-side-nav" aria-label="Secciones del formulario">
+      <button type="button" class="form-nav-item active" data-target="sec-personales"><span class="n">01</span> Datos personales</button>
+      <button type="button" class="form-nav-item" data-target="sec-profesionales"><span class="n">02</span> Datos profesionales</button>
+      <button type="button" class="form-nav-item" data-target="sec-habilitaciones"><span class="n">03</span> Habilitaciones</button>
+      <button type="button" class="form-nav-item" data-target="sec-zona"><span class="n">04</span> Zona de trabajo</button>
+      <button type="button" class="form-nav-item" data-target="sec-medios"><span class="n">05</span> Medios</button>
+      <button type="button" class="form-nav-item" data-target="sec-colaboracion"><span class="n">06</span> Colaboración</button>
+      <button type="button" class="form-nav-item" data-target="sec-consentimiento"><span class="n">07</span> Consentimiento</button>
+    </nav>
+
+    <div>
+      <form class="form-card" id="tecnico-form" novalidate>
+
+        <!-- 01 DATOS PERSONALES -->
+        <div class="form-section-block" id="sec-personales">
+          <div class="form-section-title">
+            <span class="icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 016-6h4a6 6 0 016 6v1"/></svg></span>
+            <h2>Datos personales</h2>
+          </div>
+          <div class="field-grid">
+            <div class="field full">
+              <label for="nombre_apellidos">Nombre y apellidos<span class="req">*</span></label>
+              <input type="text" id="nombre_apellidos" name="nombre_apellidos" required autocomplete="name">
+              <span class="field-error">Introduce tu nombre y apellidos.</span>
+            </div>
+            <div class="field">
+              <label for="dni_nie">DNI / NIE<span class="req">*</span></label>
+              <input type="text" id="dni_nie" name="dni_nie" required>
+              <span class="field-error">Introduce un DNI o NIE válido.</span>
+            </div>
+            <div class="field">
+              <label for="telefono">Teléfono<span class="req">*</span></label>
+              <input type="tel" id="telefono" name="telefono" required autocomplete="tel">
+              <span class="field-error">Introduce un teléfono de contacto.</span>
+            </div>
+            <div class="field">
+              <label for="email">Email<span class="req">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+              <span class="field-error">Introduce un email válido.</span>
+            </div>
+            <div class="field">
+              <label for="ciudad">Ciudad<span class="req">*</span></label>
+              <input type="text" id="ciudad" name="ciudad" required>
+              <span class="field-error">Introduce tu ciudad.</span>
+            </div>
+            <div class="field full">
+              <label for="provincia">Provincia<span class="req">*</span></label>
+              <input type="text" id="provincia" name="provincia" required>
+              <span class="field-error">Introduce tu provincia.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 DATOS PROFESIONALES -->
+        <div class="form-section-block" id="sec-profesionales">
+          <div class="form-section-title">
+            <span class="icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></span>
+            <h2>Datos profesionales</h2>
+          </div>
+          <p class="hint">Para colaborar con IberGas es obligatorio estar dado de alta como autónomo.</p>
+
+          <div class="field full">
+            <label>¿Eres autónomo?<span class="req">*</span></label>
+            <div class="toggle-group">
+              <label class="toggle-pill">
+                <input type="radio" name="autonomo" value="si" required>
+                <span>Sí</span>
+              </label>
+              <label class="toggle-pill">
+                <input type="radio" name="autonomo" value="no">
+                <span>No</span>
+              </label>
+            </div>
+            <span class="field-error">Debes indicar tu situación como autónomo.</span>
+          </div>
+
+          <div class="field-grid" style="margin-top: var(--space-5);">
+            <div class="field">
+              <label for="numero_autonomo">Número de autónomo</label>
+              <input type="text" id="numero_autonomo" name="numero_autonomo">
+            </div>
+            <div class="field">
+              <label for="empresa_nombre">Empresa o nombre comercial</label>
+              <input type="text" id="empresa_nombre" name="empresa_nombre" placeholder="Si dispones de uno">
+            </div>
+            <div class="field">
+              <label for="anios_experiencia">Años de experiencia<span class="req">*</span></label>
+              <input type="number" id="anios_experiencia" name="anios_experiencia" min="0" max="60" required>
+              <span class="field-error">Indica tus años de experiencia.</span>
+            </div>
+            <div class="field">
+              <label for="especialidades">Especialidades</label>
+              <input type="text" id="especialidades" name="especialidades" placeholder="Ej. calderas, gas industrial…">
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 HABILITACIONES -->
+        <div class="form-section-block" id="sec-habilitaciones">
+          <div class="form-section-title">
+            <span class="icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 15a4 4 0 100-8 4 4 0 000 8z"/><path d="M8.5 13.5L6 21l6-3 6 3-2.5-7.5"/></svg></span>
+            <h2>Habilitaciones</h2>
+          </div>
+          <p class="hint">Indica tus carnets y habilitaciones vigentes. La documentación se verificará antes de validar tu perfil.</p>
+
+          <div class="field-grid">
+            <div class="field">
+              <label>Carnet instalador gas categoría B<span class="req">*</span></label>
+              <div class="toggle-group">
+                <label class="toggle-pill"><input type="radio" name="carnet_b" value="si" required><span>Sí</span></label>
+                <label class="toggle-pill"><input type="radio" name="carnet_b" value="no"><span>No</span></label>
+              </div>
+              <span class="field-error">Indica si dispones del carnet categoría B.</span>
+            </div>
+            <div class="field">
+              <label>APMR (aparatos a presión)</label>
+              <div class="toggle-group">
+                <label class="toggle-pill"><input type="radio" name="apmr" value="si"><span>Sí</span></label>
+                <label class="toggle-pill"><input type="radio" name="apmr" value="no"><span>No</span></label>
+              </div>
+            </div>
+            <div class="field">
+              <label for="fecha_obtencion">Fecha de obtención<span class="req">*</span></label>
+              <input type="date" id="fecha_obtencion" name="fecha_obtencion" required>
+              <span class="field-error">Indica la fecha de obtención del carnet.</span>
+            </div>
+            <div class="field">
+              <label for="numero_habilitacion">Número de habilitación<span class="req">*</span></label>
+              <input type="text" id="numero_habilitacion" name="numero_habilitacion" required>
+              <span class="field-error">Introduce el número de habilitación.</span>
+            </div>
+          </div>
+
+          <div class="field full" style="margin-top: var(--space-2);">
+            <label>Documentación acreditativa (carnet / habilitación)<span class="req">*</span></label>
+            <span class="field-desc">Sube imágenes o PDF del carnet de instalador y demás documentación para verificación. Máx. 10MB por archivo.</span>
+            <div class="dropzone" id="dz-carnet" tabindex="0" role="button" aria-label="Subir documentación del carnet">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M6 10l6-6 6 6"/><path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3"/></svg>
+              <div class="dz-title">Arrastra tus archivos aquí o haz clic para seleccionarlos</div>
+              <div class="dz-sub">PDF, JPG o PNG · hasta 4 archivos</div>
+              <input type="file" id="input-carnet" accept=".pdf,.jpg,.jpeg,.png" multiple>
+            </div>
+            <div class="file-list" id="list-carnet"></div>
+          </div>
+        </div>
+
+        <!-- 04 ZONA DE TRABAJO -->
+        <div class="form-section-block" id="sec-zona">
+          <div class="form-section-title">
+            <span class="icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+            <h2>Zona de trabajo</h2>
+          </div>
+          <div class="field-grid">
+            <div class="field">
+              <label for="provincia_trabajo">Provincia<span class="req">*</span></label>
+              <input type="text" id="provincia_trabajo" name="provincia_trabajo" required>
+              <span class="field-error">Indica la provincia donde trabajas.</span>
+            </div>
+            <div class="field">
+              <label for="radio_desplazamiento">Radio aproximado de desplazamiento (km)<span class="req">*</span></label>
+              <input type="number" id="radio_desplazamiento" name="radio_desplazamiento" min="0" required>
+              <span class="field-error">Indica el radio de desplazamiento.</span>
+            </div>
+            <div class="field full">
+              <label for="municipios">Municipios donde trabaja<span class="req">*</span></label>
+              <input type="text" id="municipios" name="municipios" placeholder="Ej. Barcelona, Badalona, Sant Cugat…" required>
+              <span class="field-error">Indica los municipios donde trabajas.</span>
+            </div>
+            <div class="field full">
+              <label for="disponibilidad">Disponibilidad<span class="req">*</span></label>
+              <select id="disponibilidad" name="disponibilidad" required>
+                <option value="">Selecciona una opción</option>
+                <option value="completa">Completa (jornada completa)</option>
+                <option value="parcial">Parcial (algunos días/horas)</option>
+                <option value="fines_de_semana">Fines de semana</option>
+                <option value="urgencias_24h">Urgencias 24h</option>
+                <option value="bajo_demanda">Bajo demanda / puntual</option>
+              </select>
+              <span class="field-error">Selecciona tu disponibilidad.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 MEDIOS -->
+        <div class="form-section-block" id="sec-medios">
+          <div class="form-section-title">
+            <span class="icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="8" width="15" height="9" rx="1"/><path d="M17 11h3l2 3v3h-5z"/><circle cx="6.5" cy="19.5" r="1.5"/><circle cx="17.5" cy="19.5" r="1.5"/></svg></span>
+            <h2>Medios</h2>
+          </div>
+          <div class="field-grid field-grid-3">
+            <div class="field">
+              <label>Vehículo propio<span class="req">*</span></label>
+              <div class="toggle-group">
+                <label class="toggle-pill"><input type="radio" name="vehiculo_propio" value="si" required><span>Sí</span></label>
+                <label class="toggle-pill"><input type="radio" name="vehiculo_propio" value="no"><span>No</span></label>
+              </div>
+              <span class="field-error">Indica si dispones de vehículo propio.</span>
+            </div>
+            <div class="field">
+              <label>Herramientas propias<span class="req">*</span></label>
+              <div class="toggle-group">
+                <label class="toggle-pill"><input type="radio" name="herramientas_propias" value="si" required><span>Sí</span></label>
+                <label class="toggle-pill"><input type="radio" name="herramientas_propias" value="no"><span>No</span></label>
+              </div>
+              <span class="field-error">Indica si dispones de herramientas propias.</span>
+            </div>
+            <div class="field">
+              <label>Seguro de responsabilidad civil<span class="req">*</span></label>
+              <div class="toggle-group">
+                <label class="toggle-pill"><input type="radio" name="seguro_rc" value="si" required><span>Sí</span></label>
+                <label class="toggle-pill"><input type="radio" name="seguro_rc" value="no"><span>No</span></label>
+              </div>
+              <span class="field-error">Indica si dispones de seguro de RC.</span>
+            </div>
+          </div>
+          <div class="field full" style="margin-top: var(--space-2);">
+            <label>Justificante del seguro de responsabilidad civil</label>
+            <span class="field-desc">Si dispones de él, súbelo en PDF o imagen.</span>
+            <div class="dropzone" id="dz-seguro" tabindex="0" role="button" aria-label="Subir justificante del seguro">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M6 10l6-6 6 6"/><path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3"/></svg>
+              <div class="dz-title">Arrastra el justificante o haz clic para seleccionarlo</div>
+              <div class="dz-sub">PDF, JPG o PNG · hasta 2 archivos</div>
+              <input type="file" id="input-seguro" accept=".pdf,.jpg,.jpeg,.png" multiple>
+            </div>
+            <div class="file-list" id="list-seguro"></div>
+          </div>
+        </div>
+
+        <!-- 06 TIPO DE COLABORACIÓN -->
+        <div class="form-section-block" id="sec-colaboracion">
+          <div class="form-section-title">
+            <span class="icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/><path d="M17 3.5a4 4 0 010 7"/></svg></span>
+            <h2>Tipo de colaboración</h2>
+          </div>
+          <p class="hint">Selecciona todas las opciones en las que estás interesado en colaborar.</p>
+          <div class="check-grid">
+            <label class="check-card">
+              <input type="checkbox" name="tipo_colaboracion" value="revisiones_gas">
+              <div><div class="title">Revisiones de gas</div><div class="desc">Revisiones periódicas de instalaciones y calderas.</div></div>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" name="tipo_colaboracion" value="inspecciones">
+              <div><div class="title">Inspecciones</div><div class="desc">Inspecciones técnicas oficiales.</div></div>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" name="tipo_colaboracion" value="instalaciones">
+              <div><div class="title">Instalaciones</div><div class="desc">Instalaciones nuevas de gas.</div></div>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" name="tipo_colaboracion" value="reparaciones">
+              <div><div class="title">Reparaciones</div><div class="desc">Resolución de averías.</div></div>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" name="tipo_colaboracion" value="trabajos_puntuales">
+              <div><div class="title">Trabajos puntuales</div><div class="desc">Colaboraciones esporádicas según demanda.</div></div>
+            </label>
+            <label class="check-card">
+              <input type="checkbox" name="tipo_colaboracion" value="colaboracion_continuada">
+              <div><div class="title">Colaboración continuada</div><div class="desc">Disponibilidad estable y recurrente.</div></div>
+            </label>
+          </div>
+
+          <div class="field full" style="margin-top: var(--space-6);">
+            <label for="experiencia_descripcion">Describe tu experiencia profesional</label>
+            <textarea id="experiencia_descripcion" name="experiencia_descripcion" placeholder="Cuéntanos brevemente tu trayectoria, tipos de instalaciones en los que has trabajado, certificaciones adicionales…"></textarea>
+          </div>
+        </div>
+
+        <!-- 07 CONSENTIMIENTO -->
+        <div class="form-section-block" id="sec-consentimiento">
+          <div class="form-section-title">
+            <span class="icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span>
+            <h2>Consentimiento</h2>
+          </div>
+
+          <div class="consent-block">
+            <input type="checkbox" id="acepta_privacidad" name="acepta_privacidad" required>
+            <label for="acepta_privacidad">He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a> de IberGas.<span class="req">*</span></label>
+          </div>
+          <div class="consent-block">
+            <input type="checkbox" id="acepta_base_datos" name="acepta_base_datos" required>
+            <label for="acepta_base_datos">Consiento formar parte de la base de datos profesional de técnicos colaboradores de IberGas y ser contactado con propuestas de colaboración.<span class="req">*</span></label>
+          </div>
+
+          <div class="form-status-msg" id="form-status" role="alert"></div>
+
+          <div class="form-footer-actions">
+            <p style="font-size: 0.82rem; color: var(--ink-soft);">Los campos marcados con <span style="color:var(--amber-600);">*</span> son obligatorios.</p>
+            <button type="submit" class="btn btn-primary" id="submit-btn">Enviar solicitud</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="form-card form-success-panel" id="success-panel" style="display:none;">
+        <div class="icon-wrap">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h2>Solicitud enviada correctamente</h2>
+        <p>Gracias por registrarte en la red de técnicos colaboradores de IberGas. Revisaremos tu documentación y te contactaremos por email o teléfono con el resultado de la validación.</p>
+        <a href="../index.html" class="btn btn-outline" style="margin-top: var(--space-6);">Volver al inicio</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand" style="color:white;">
+          <span class="brand-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 6 9.5 6 14.5C6 18.09 8.69 21 12 21C15.31 21 18 18.09 18 14.5C18 9.5 12 2 12 2Z" fill="white" fill-opacity="0.95"/></svg></span>
+          IberGas
+        </a>
+        <p>Empresa especializada en servicios de gas, respaldada por una red de técnicos instaladores habilitados.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <a href="../index.html#sobre-nosotros">Sobre nosotros</a>
+        <a href="../index.html#servicios">Servicios</a>
+        <a href="colaboradores.html">Colaboradores</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <div class="footer-col">
+        <h4>Red de técnicos</h4>
+        <a href="../index.html#red">Red IberGas</a>
+        <a href="registro-tecnico.html">Registro de técnicos</a>
+        <a href="faq.html">Preguntas frecuentes</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacidad.html">Política de privacidad</a>
+        <a href="aviso-legal.html">Aviso legal</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> IberGas. Todos los derechos reservados.</span>
+      <span>Servicios técnicos de gas y red de instaladores habilitados</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/site.js"></script>
+<script type="module" src="../js/registro-tecnico.js"></script>
+</body>
+</html>
