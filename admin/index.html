@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel administrador — IberGas</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+
+<!-- ======================= LOGIN ======================= -->
+<div class="admin-login-wrap" id="admin-login-wrap">
+  <div class="admin-login-card">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 6 9.5 6 14.5C6 18.09 8.69 21 12 21C15.31 21 18 18.09 18 14.5C18 9.5 12 2 12 2Z" fill="white" fill-opacity="0.95"/></svg></span>
+      IberGas
+    </div>
+    <h1>Panel administrador</h1>
+    <p>Accede con tu cuenta de administrador para gestionar la red de técnicos.</p>
+    <form id="admin-login-form">
+      <div class="field">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" name="email" required autocomplete="username">
+      </div>
+      <div class="field">
+        <label for="login-password">Contraseña</label>
+        <input type="password" id="login-password" name="password" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Acceder</button>
+      <div class="admin-login-error" id="admin-login-error"></div>
+    </form>
+  </div>
+</div>
+
+<!-- ======================= SHELL ADMIN ======================= -->
+<div class="admin-shell" id="admin-shell" style="display:none;">
+  <aside class="admin-sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 6 9.5 6 14.5C6 18.09 8.69 21 12 21C15.31 21 18 18.09 18 14.5C18 9.5 12 2 12 2Z" fill="white" fill-opacity="0.95"/></svg></span>
+      IberGas
+    </div>
+    <nav class="admin-nav">
+      <a href="admin/index.html" class="active">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/><path d="M17 3.5a4 4 0 010 7"/></svg>
+        Técnicos
+      </a>
+      <a href="../index.html" target="_blank">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+        Ver web pública
+      </a>
+    </nav>
+    <div class="admin-sidebar-bottom">
+      <div class="admin-user-chip">
+        <span class="avatar" id="user-chip-avatar">A</span>
+        <span class="email" id="user-chip-email"></span>
+      </div>
+      <button type="button" class="btn btn-outline btn-sm btn-block" id="logout-btn" style="color:white; border-color: rgba(255,255,255,0.25);">Cerrar sesión</button>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div>
+        <h1>Técnicos registrados</h1>
+        <p>Gestiona, filtra y valida a los técnicos colaboradores de la red IberGas.</p>
+      </div>
+    </div>
+
+    <div class="admin-stats-row">
+      <div class="admin-stat-card"><div class="num" id="stat-total">0</div><div class="label">Total registrados</div></div>
+      <div class="admin-stat-card"><div class="num" id="stat-pendientes">0</div><div class="label">Pendientes de revisión</div></div>
+      <div class="admin-stat-card"><div class="num" id="stat-validados">0</div><div class="label">Validados</div></div>
+      <div class="admin-stat-card"><div class="num" id="stat-disponibles">0</div><div class="label">Disponibles</div></div>
+    </div>
+
+    <div class="admin-filters">
+      <select id="filter-provincia"><option value="">Todas las provincias</option></select>
+      <select id="filter-carnet">
+        <option value="">Carnet / habilitación</option>
+        <option value="carnet_b">Solo con carnet B</option>
+        <option value="apmr">Solo con APMR</option>
+      </select>
+      <select id="filter-disponibilidad">
+        <option value="">Toda disponibilidad</option>
+        <option value="completa">Completa</option>
+        <option value="parcial">Parcial</option>
+        <option value="fines_de_semana">Fines de semana</option>
+        <option value="urgencias_24h">Urgencias 24h</option>
+        <option value="bajo_demanda">Bajo demanda</option>
+      </select>
+      <select id="filter-estado">
+        <option value="">Todos los estados</option>
+        <option value="pendiente_revision">Pendiente revisión</option>
+        <option value="validado">Validado</option>
+        <option value="disponible">Disponible</option>
+        <option value="no_disponible">No disponible</option>
+      </select>
+      <input type="search" id="filter-search" placeholder="Buscar por nombre, email o ciudad…">
+      <span class="filter-count" id="filter-count">0 técnicos</span>
+    </div>
+
+    <div class="admin-table-wrap">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Técnico</th>
+            <th>Provincia</th>
+            <th>Habilitaciones</th>
+            <th>Disponibilidad</th>
+            <th>Estado</th>
+            <th>Documentos</th>
+          </tr>
+        </thead>
+        <tbody id="tecnicos-tbody"></tbody>
+      </table>
+      <div class="admin-empty-state" id="admin-empty-state" style="display:none;">Cargando técnicos…</div>
+    </div>
+  </main>
+</div>
+
+<!-- ======================= DRAWER DE DETALLE ======================= -->
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-header">
+    <h2>Ficha del técnico</h2>
+    <button class="close-btn" id="drawer-close" aria-label="Cerrar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="drawer-body" id="drawer-body"></div>
+</aside>
+
+<script type="module" src="../js/admin.js"></script>
+</body>
+</html>
