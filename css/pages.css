@@ -1,0 +1,132 @@
+/* ============================================================
+   IberGas — Páginas de contenido (contacto, legal, FAQ, colaboradores)
+   ============================================================ */
+
+.page-hero {
+  background: linear-gradient(160deg, var(--navy-900), var(--navy-950));
+  color: white;
+  padding-block: var(--space-8) var(--space-7);
+}
+.page-hero .eyebrow { color: var(--teal-300); }
+.page-hero h1 { color: white; font-size: clamp(1.9rem, 3.4vw, 2.8rem); margin-top: var(--space-3); max-width: 30ch; }
+.page-hero p { color: var(--mist-300); margin-top: var(--space-4); max-width: 60ch; font-size: 1.02rem; }
+
+/* ---------- Contacto ---------- */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  padding-block: var(--space-8);
+  align-items: start;
+}
+@media (max-width: 880px) { .contact-layout { grid-template-columns: 1fr; } }
+
+.contact-info-list { display: grid; gap: var(--space-5); margin-top: var(--space-6); }
+.contact-info-item { display: flex; gap: var(--space-4); align-items: flex-start; }
+.contact-info-item .icon {
+  width: 42px; height: 42px; border-radius: 10px;
+  background: var(--mist-100); color: var(--teal-500);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.contact-info-item h4 { font-size: 0.98rem; }
+.contact-info-item p, .contact-info-item a { font-size: 0.9rem; color: var(--ink-soft); }
+.contact-info-item a:hover { color: var(--teal-500); }
+
+.contact-form-card {
+  background: var(--white);
+  border: 1px solid var(--mist-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-7);
+}
+
+/* ---------- FAQ ---------- */
+.faq-list { max-width: 780px; }
+.faq-item {
+  border-bottom: 1px solid var(--mist-200);
+}
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5) 0;
+  text-align: left;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--navy-900);
+}
+.faq-question .chev { transition: transform var(--transition); color: var(--teal-500); flex-shrink: 0; }
+.faq-item.open .faq-question .chev { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 320ms ease;
+}
+.faq-answer-inner { padding-bottom: var(--space-5); color: var(--ink-soft); font-size: 0.95rem; max-width: 68ch; }
+.faq-item.open .faq-answer { max-height: 400px; }
+
+.faq-category-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--teal-500);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-2);
+}
+.faq-category-label:first-child { margin-top: 0; }
+
+/* ---------- Legal / Privacidad ---------- */
+.legal-content {
+  max-width: 760px;
+  padding-block: var(--space-8);
+}
+.legal-content h2 { font-size: 1.3rem; margin-top: var(--space-7); margin-bottom: var(--space-3); }
+.legal-content h2:first-child { margin-top: 0; }
+.legal-content p, .legal-content li { color: var(--ink-soft); font-size: 0.96rem; margin-bottom: var(--space-3); }
+.legal-content ul { padding-left: var(--space-5); list-style: disc; }
+.legal-content li { margin-bottom: var(--space-2); }
+.legal-content .updated { font-size: 0.82rem; color: var(--ink-soft); font-family: var(--font-mono); margin-bottom: var(--space-6); }
+
+/* ---------- Colaboradores ---------- */
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+@media (max-width: 880px) { .value-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .value-grid { grid-template-columns: 1fr; } }
+
+.value-card { text-align: left; }
+.value-card .icon {
+  width: 46px; height: 46px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--teal-500), var(--blue-600));
+  color: white; display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--space-4);
+}
+
+.steps-list {
+  display: grid;
+  gap: var(--space-5);
+  counter-reset: step;
+}
+.step-row {
+  display: flex;
+  gap: var(--space-5);
+  align-items: flex-start;
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  border: 1px solid var(--mist-200);
+}
+.step-row .step-num {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--teal-500);
+  min-width: 2ch;
+}
+.step-row h4 { font-size: 1rem; margin-bottom: 4px; }
+.step-row p { color: var(--ink-soft); font-size: 0.92rem; }
