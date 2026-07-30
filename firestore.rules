@@ -1,0 +1,56 @@
+rules_version = '2';
+
+// ============================================================
+// IberGas — Reglas de seguridad Firestore
+// ============================================================
+// Modelo:
+// - Cualquier persona puede CREAR un registro en "tecnicos" (el
+//   formulario público de alta), pero nadie puede leer, listar,
+//   editar ni borrar registros sin ser administrador.
+// - Solo los usuarios cuyo email está en la colección "admins"
+//   pueden leer/editar la lista de técnicos desde el panel.
+// - Los mensajes de contacto (si se conecta el formulario de
+//   contacto a Firestore en el futuro) siguen el mismo patrón:
+//   cualquiera puede crear, solo el admin puede leer.
+// ============================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAdmin() {
+      return request.auth != null &&
+        exists(/databases/$(database)/documents/admins/$(request.auth.token.email));
+    }
+
+    // Colección de administradores autorizados.
+    // Documento por email, p.ej. admins/admin@ibergas.es
+    // Solo un admin ya existente puede leer esta colección;
+    // la creación de nuevos admins se gestiona desde la consola
+    // de Firebase, nunca desde el cliente.
+    match /admins/{adminEmail} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
+    // Técnicos colaboradores
+    match /tecnicos/{tecnicoId} {
+      // El formulario público puede crear un registro nuevo.
+      // No puede fijar su propio estado a otra cosa que "pendiente_revision"
+      // ni escribir notas internas.
+      allow create: if
+        request.resource.data.estado == 'pendiente_revision' &&
+        (!('notasInternas' in request.resource.data) || request.resource.data.notasInternas == '');
+
+      // Solo un administrador autenticado puede leer, listar,
+      // actualizar (validar, cambiar estado, añadir notas) o borrar.
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Mensajes del formulario de contacto (opcional, para cuando
+    // se conecte contacto.html a Firestore en el futuro)
+    match /mensajes_contacto/{mensajeId} {
+      allow create: if true;
+      allow read, update, delete: if isAdmin();
+    }
+  }
+}

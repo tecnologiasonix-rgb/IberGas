@@ -1,0 +1,32 @@
+rules_version = '2';
+
+// ============================================================
+// IberGas — Reglas de seguridad Firebase Storage
+// ============================================================
+// Los documentos de cada técnico se guardan bajo:
+//   /tecnicos/{tecnicoId}/{categoria}/{archivo}
+// Cualquiera puede SUBIR un documento (es parte del alta pública),
+// pero solo un administrador autenticado puede leer/descargar
+// los documentos ya subidos.
+// ============================================================
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isAdmin() {
+      return request.auth != null &&
+        firestore.exists(/databases/(default)/documents/admins/$(request.auth.token.email));
+    }
+
+    match /tecnicos/{tecnicoId}/{categoria}/{fileName} {
+      // Subida pública desde el formulario de registro.
+      // Límite de 10MB y solo PDF o imágenes.
+      allow create: if
+        request.resource.size < 10 * 1024 * 1024 &&
+        request.resource.contentType.matches('application/pdf|image/jpeg|image/png|image/jpg');
+
+      // Solo administradores pueden leer, sobrescribir o borrar.
+      allow read, update, delete: if isAdmin();
+    }
+  }
+}
