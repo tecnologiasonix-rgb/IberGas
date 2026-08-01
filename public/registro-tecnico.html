@@ -59,6 +59,10 @@
       <span class="eyebrow">Red de técnicos colaboradores</span>
       <h1>Registro de técnicos colaboradores IberGas</h1>
       <p>Completa tus datos personales, profesionales y de habilitación. Nuestro equipo revisará tu documentación y te contactará con el resultado de la validación.</p>
+      <div class="form-progress-head">
+        <span class="label">Progreso de la solicitud</span>
+        <span class="pct" id="progress-pct">0%</span>
+      </div>
       <div class="form-progress" aria-hidden="true">
         <div class="form-progress-step active"><div class="fill"></div></div>
         <div class="form-progress-step"><div class="fill"></div></div>
@@ -374,6 +378,17 @@
         <a href="../index.html" class="btn btn-outline" style="margin-top: var(--space-6);">Volver al inicio</a>
       </div>
     </div>
+  </div>
+
+  <div class="form-mobile-bar" id="form-mobile-bar">
+    <div class="progress-ring-wrap">
+      <svg width="42" height="42" viewBox="0 0 42 42">
+        <circle class="ring-bg" cx="21" cy="21" r="18"></circle>
+        <circle class="ring-fill" id="mobile-ring-fill" cx="21" cy="21" r="18" stroke-dasharray="113" stroke-dashoffset="113"></circle>
+      </svg>
+      <span class="ring-pct" id="mobile-ring-pct">0%</span>
+    </div>
+    <button type="button" class="btn btn-primary" id="mobile-submit-btn">Enviar solicitud</button>
   </div>
 </main>
 
