@@ -85,12 +85,39 @@
 <div id="site-footer-slot"></div>
 <script src="../js/partials.js"></script>
 <script src="../js/site.js"></script>
-<script>
-  // Envío básico del formulario de contacto (placeholder hasta integrar backend/Firestore "mensajes")
-  document.getElementById('contact-form').addEventListener('submit', function (e) {
+<script type="module">
+  import { db } from "../js/firebase/config.js";
+  import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+  const form = document.getElementById('contact-form');
+  const statusEl = document.getElementById('contact-status');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
-    document.getElementById('contact-status').textContent = 'Gracias por tu mensaje. Te responderemos lo antes posible.';
-    this.reset();
+    submitBtn.disabled = true;
+    statusEl.style.color = '';
+    statusEl.textContent = 'Enviando…';
+
+    try {
+      const formData = new FormData(form);
+      await addDoc(collection(db, 'mensajes_contacto'), {
+        nombre: formData.get('nombre')?.trim(),
+        email: formData.get('email')?.trim(),
+        telefono: formData.get('telefono')?.trim() || '',
+        asunto: formData.get('asunto'),
+        mensaje: formData.get('mensaje')?.trim(),
+        fecha: serverTimestamp(),
+      });
+      statusEl.textContent = 'Gracias por tu mensaje. Te responderemos lo antes posible.';
+      form.reset();
+    } catch (err) {
+      console.error('Error al enviar el mensaje de contacto:', err);
+      statusEl.style.color = '#c0392b';
+      statusEl.textContent = 'No se ha podido enviar el mensaje. Inténtalo de nuevo.';
+    } finally {
+      submitBtn.disabled = false;
+    }
   });
 </script>
 </body>
