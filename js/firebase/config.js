@@ -22,6 +22,14 @@ const firebaseConfig = {
   appId: "REEMPLAZAR_APP_ID"
 };
 
+if (firebaseConfig.apiKey.startsWith("REEMPLAZAR")) {
+  console.error(
+    "[IberGas] Firebase no está configurado todavía. " +
+    "Abre js/firebase/config.js y pega las claves reales de tu proyecto " +
+    "(Consola de Firebase → Configuración del proyecto → Tus apps)."
+  );
+}
+
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
